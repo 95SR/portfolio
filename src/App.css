@@ -19,11 +19,12 @@
 
 nav{
   position: fixed;
-  background: rgba(0, 4, 17,0);
+  background: rgba(127, 129, 133, 0.4);
   width: 100%;
   padding: 1.5rem;
   text-align: right;
   font-size: 1.5rem;
+  backdrop-filter: blur(10px);
 }
 
 nav > *{
@@ -41,5 +42,43 @@ nav > *:hover{
 .active{
   border-bottom: 3px solid var(--color-secondary);
   color: var(--color-secondary);
+}
+
+@media screen and (max-width:600px) {
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav > *{
+    width: max-content;
+    font-size: 40px;
+  }
+  
+}
+
+.burger{
+  font-size: 50px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+
+}
+
+.burger:hover{
+  color: var(--color-secondary);
+
+}
+
+.hide{
+  display: none;
 }
 
