@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import CV from '../img/CV.pdf'
+
 
 function Home() {
   return (
@@ -15,7 +15,7 @@ function Home() {
 
         
         <button>
-            <a href={CV} download> Download CV</a>
+            <a href="/cv.pdf" download> Download CV</a>
         </button>
         
         
