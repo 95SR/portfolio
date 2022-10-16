@@ -8,6 +8,7 @@ function App() {
   const [active,setActive] = useState('#home');
   const [windowSize,setWindowSize] = useState(window.innerWidth);
   const [navShow, setNavShow] = useState(false);
+  const [offsetY, setOffsetY] = useState(window.scrollY);
 
   useEffect(()=>{
     setLoading(true);
@@ -29,7 +30,22 @@ function App() {
     };
   }, []);
 
-  console.log(windowSize)
+  function handleScroll (){
+    setOffsetY(window.scrollY);
+    if(window.scrollY <812) {
+      setActive('#home')
+    } else if (window.scrollY >= 812 && window.scrollY < 1624) {
+      setActive('#about')
+    } else if (window.scrollY >= 1624 && window.scrollY < 2436) {
+      setActive('#work')
+    } else{
+      setActive('#contact')
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+  console.log(window.scrollY)
 
   const showMenu= () => {
     setNavShow(!navShow);
@@ -45,10 +61,10 @@ function App() {
         :
         <div className='sections'>
           <nav className={windowSize<=600 && !navShow ? 'hide' : ''}>
-            <a href='#home' onClick={()=> setActive('#home')} className={active === '#home' ? 'active' : ""}>Home</a>
-            <a href='#about' onClick={()=> setActive('#about')} className={active === '#about' ? 'active' : ""}>About</a>
-            <a href='#work' onClick={()=> setActive('#work')} className={active === '#work' ? 'active' : ""}>Work</a>
-            <a href='#contact' onClick={()=> setActive('#contact')} className={active === '#contact' ? 'active' : ""}>Contact</a>
+            <a href='#home' onClick={showMenu} className={active === '#home' ? 'active' : ""}>Home</a>
+            <a href='#about' onClick={showMenu} className={active === '#about' ? 'active' : ""}>About</a>
+            <a href='#work' onClick={showMenu} className={active === '#work' ? 'active' : ""}>Work</a>
+            <a href='#contact' onClick={showMenu} className={active === '#contact' ? 'active' : ""}>Contact</a>
             
           
             

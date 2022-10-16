@@ -36,7 +36,7 @@ body{
   line-height: 1.7;
 
 }
-button{
+.btn{
   font-family: 'Josefin Sans', sans-serif;
   
   
@@ -100,15 +100,12 @@ button{
   margin: 0 auto;
   height: 100vh;
   margin: 50px;
-  
+  padding-top:  6rem;
+  padding-bottom: 6rem;
   
   
   /*padding: 7rem 1rem;*/
 }
-
-
-
-
 
 h1{
   font-size: 100px;
@@ -129,14 +126,15 @@ h3{
 }
 
 a{
-  color: var(--color-light);
+  color: black;
 }
 
+.btn, 
 button{
   border: none;
-  width:200px;
+  width:max-content;
   padding: 10px 30px;
-  margin-right: 40px;
+  
   border-radius: 50pt;
   border: none;
   cursor: pointer;
@@ -148,12 +146,27 @@ button{
   
 }
 
+button{
+  font: inherit;
+}
+
 button:hover{
   animation: gradient2 1.5s ease ;
   animation-fill-mode: forwards;
   color: white;
 }
 
+a:hover{
+  animation: gradient2 1.5s ease ;
+  animation-fill-mode: forwards;
+  color: white;
+}
+
+.btn:hover{
+  animation: gradient2 1.5s ease ;
+  animation-fill-mode: forwards;
+  color: white;
+}
 
 /*==============================Media queries===================================*/
 

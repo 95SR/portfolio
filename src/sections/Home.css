@@ -21,10 +21,13 @@
   
 }
 
-#home button{
-    margin: 2rem auto;
+#home .btn{
+    margin: 3rem auto;
 }
 
+h2{
+    margin-bottom: 30px;
+}
 @media screen and (max-width:700px) {
     .child-container{
         display: flex;
@@ -33,23 +36,14 @@
         
     }
     
+    h2{
+        margin-bottom: 3px;
+    }
 }
 
 h1 span{
     color: var(--color-secondary);
 }
 
-button{
-    margin-top: 5rem;
-    
-}
-button a{
-    color: var(--color-bg);
-    transition: all 1s ease;
-    
-}
 
-button:hover > a{
-    color: white;
-    
-}
+  

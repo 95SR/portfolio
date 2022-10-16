@@ -14,10 +14,10 @@ function Home() {
         <h2> stayin' in South Korea</h2> 
 
         
-        <button>
-            <a href="/cv.pdf" download> Download CV</a>
-        </button>
         
+        
+        
+        <a className='btn' href="/cv.pdf" download> Download CV</a>
         
 
         </div>
