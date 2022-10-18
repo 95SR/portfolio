@@ -39,3 +39,7 @@ h4{
     margin-bottom: 20px;
     font-size: 1.5rem
 }
+
+.error-msg{
+    color: tomato;
+}
