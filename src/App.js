@@ -9,6 +9,7 @@ function App() {
   const [windowSize,setWindowSize] = useState(window.innerWidth);
   const [navShow, setNavShow] = useState(false);
   const [offsetY, setOffsetY] = useState(window.scrollY);
+  const [height, setHeight] = useState(window.innerHeight);
 
   useEffect(()=>{
     setLoading(true);
@@ -21,6 +22,7 @@ function App() {
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(window.innerWidth);
+      setHeight(window.innerHeight);
     }
 
     window.addEventListener('resize', handleWindowResize);
@@ -32,11 +34,11 @@ function App() {
 
   function handleScroll (){
     setOffsetY(window.scrollY);
-    if(window.scrollY <812) {
+    if(window.scrollY < height*1 -100) {
       setActive('#home')
-    } else if (window.scrollY >= 812 && window.scrollY < 1624) {
+    } else if (window.scrollY >= height*1 -100 && window.scrollY < height*2-100 ) {
       setActive('#about')
-    } else if (window.scrollY >= 1624 && window.scrollY < 2436) {
+    } else if (window.scrollY >= height*2-100 && window.scrollY < height*3-100) {
       setActive('#work')
     } else{
       setActive('#contact')
@@ -46,10 +48,12 @@ function App() {
   window.addEventListener('scroll', handleScroll);
 
   console.log(window.scrollY)
+  
 
   const showMenu= () => {
     setNavShow(!navShow);
   }
+  
 
 
 
@@ -57,7 +61,10 @@ function App() {
     <div className="App">
       {
         loading ?
-        <p className='loading'>Female Alien Livin in South Korea</p>
+        <div className='loading-container'>
+          <p className='loading'>Female Alien Livin in South Korea <span className='cursor'></span></p>
+        </div>
+        
         :
         <div className='sections'>
           <nav className={windowSize<=600 && !navShow ? 'hide' : ''}>

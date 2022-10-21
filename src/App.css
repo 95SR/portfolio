@@ -1,16 +1,19 @@
-.loading{
+.loading-container{
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 100vh;
   font-size: 4rem;
   animation-name: fading;
   animation-duration: 5s;
   animation-fill-mode: forwards;
+  
 }
 
-.loading::after{
-  content: "";
+.cursor{
+  display: inline-block;
+  
   width: 10px;
   height: 4rem;
   background-color: var(--color-secondary);
