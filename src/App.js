@@ -86,7 +86,7 @@ function App() {
           <About/>
           <Work/>
           <Contact/>
-          <Footer/>
+          
         </div>
       }
       
